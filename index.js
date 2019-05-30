@@ -62,8 +62,8 @@ const axiosWillFailQuitePromptlyDueToInvalidRoute = async () => {
 
 const axiosWillFailQuitePromptlyDueToTimeout = async () => {
   try {
-    const client = axios(dummyApiUrl, impossibleTimeout)
-    const result = await client(dummyPath)
+    const client = axios(failApiUrl, impossibleTimeout)
+    const result = await client(failPath)
     console.log('GOT A AXIOS RESULT: ', result.data)
   } catch (error) {
     console.log('CAUGHT AN ERROR IN AXIOS: ', error)
@@ -76,4 +76,4 @@ restifyWillHangEvenWithTimeout()
 
 // axiosWillWork()
 // axiosWillFailQuitePromptlyDueToInvalidRoute()
-// axiosWillFailQuitePromptlyDueToTimeout()
+axiosWillFailQuitePromptlyDueToTimeout()
